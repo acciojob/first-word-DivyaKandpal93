@@ -1,12 +1,19 @@
-function firstWord(s) {
+function firstWord(sentence) {
   // your code here
-	if(s.trim() === '' || !s.includes(' ')){
-		return s;
-	}
-	else {
-		let result = s.split(' ');
-		return result[0];
-	}
+	 try {
+        if (sentence.trim() === '') {
+            return sentence;
+        } else if (!sentence.includes(' ')) {
+            return sentence;
+        } else {
+            const words = sentence.split(' ');
+            return words[0];
+        }
+    } catch (error) {
+        console.error("An error occurred:", error.message);
+        // You can choose to return a default value or handle the error in any appropriate manner
+        return null;
+    }
 }
 
 // Do not change the code below
